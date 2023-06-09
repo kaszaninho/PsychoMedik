@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PsychoMedikApp.Views.ChorobaView.NewChorobaPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Nowa Choroba">
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Nazwa" FontSize="Medium" />
+            <Entry Text="{Binding Nazwa, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Opis" FontSize="Medium" />
+            <Editor Text="{Binding Opis, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="1"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Anuluj" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" />
+                <Button Text="Zapisz" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
