@@ -1,0 +1,19 @@
+﻿using PsychoMedikAPI.Models.Abstract;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace PsychoMedikAPI.Models
+{
+    public class Pacjent : DescriptionTable
+    {
+        public String Imie { get; set; }
+        public String Nazwisko { get; set; }
+        public DateTime DataUrodzenia { get; set; }
+        public bool Plec { get; set; }
+        public int? IdPracownika { get; set; }
+        [ForeignKey("IdPracownika")]
+        public virtual Pracownik? Pracownik{ get; set; }
+        public ICollection<Objaw>? Objawy { get; set; }
+        public ICollection<HistoriaChoroby>? HistoriaChoroby{ get; set; }
+
+    }
+}
